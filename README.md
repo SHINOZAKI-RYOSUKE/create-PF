@@ -155,7 +155,7 @@ pdf/2ページ目/ブラフ　参照
 
 
 ## チャレンジ要素一覧
-https://docs.google.com/spreadsheets/d/10fBULW2zp7TOlEqKp4M9HFH9mq97a3og0Trzv95gXyI/edit#gid=1936046502
+[ここやで！](https://docs.google.com/spreadsheets/d/10fBULW2zp7TOlEqKp4M9HFH9mq97a3og0Trzv95gXyI/edit#gid=1936046502)
 
 ## 開発環境
 OS：Linux(CentOS)
