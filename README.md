@@ -151,7 +151,15 @@ pdf/2ページ目/ブラフ　参照
 >OMRON/太陽光不足が「SEうつ病」を招く
 
 ## 設計書
-[ワイヤーフレーム](https://app.diagrams.net/#G1uM-Ji_Bn275JwsjEzsOpta4VNWInhA0J)
+
+### ER図
+![PF_ER](https://user-images.githubusercontent.com/81736172/121026390-0cb9bc00-c7e1-11eb-934d-e45167b7c174.png)
+
+### UIフロー
+![PF_UI flows](https://user-images.githubusercontent.com/81736172/121026636-48548600-c7e1-11eb-935b-b0dc045a7332.png)
+
+### ワイヤーフレーム
+[ここにいるよ！](https://app.diagrams.net/#G1uM-Ji_Bn275JwsjEzsOpta4VNWInhA0J)
 
 
 
