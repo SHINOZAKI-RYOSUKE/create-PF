@@ -159,8 +159,10 @@ pdf/2ページ目/ブラフ　参照
 ![PF_UI flows](https://user-images.githubusercontent.com/81736172/121026636-48548600-c7e1-11eb-935b-b0dc045a7332.png)
 
 ### ワイヤーフレーム
-[ここにいるよ！](https://app.diagrams.net/#G1uM-Ji_Bn275JwsjEzsOpta4VNWInhA0J)
+[ここから](https://app.diagrams.net/#G1uM-Ji_Bn275JwsjEzsOpta4VNWInhA0J)
 
+### テーブル定義書
+[ここから](https://docs.google.com/spreadsheets/d/1oyqAyIsp-EtzKQMCIrzMiwrGk9grVu2q/edit#gid=84123752)
 
 
 ## チャレンジ要素一覧
