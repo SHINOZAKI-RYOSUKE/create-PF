@@ -153,10 +153,10 @@ pdf/2ページ目/ブラフ　参照
 ## 設計書
 
 ### ER図
-![PF_ER](https://user-images.githubusercontent.com/81736172/121026390-0cb9bc00-c7e1-11eb-934d-e45167b7c174.png)
+![ER_PF](https://user-images.githubusercontent.com/81736172/121328894-ac955800-c94f-11eb-9ec9-0f737253a82b.png)
 
 ### UIフロー
-![PF_UI flows](https://user-images.githubusercontent.com/81736172/121026636-48548600-c7e1-11eb-935b-b0dc045a7332.png)
+![UI flows_PF](https://user-images.githubusercontent.com/81736172/121328949-b9b24700-c94f-11eb-8ce2-e5e7b5597fa5.png)
 
 ### ワイヤーフレーム
 [ここから](https://app.diagrams.net/#G1uM-Ji_Bn275JwsjEzsOpta4VNWInhA0J)
@@ -164,9 +164,8 @@ pdf/2ページ目/ブラフ　参照
 ### テーブル定義書
 [ここから](https://docs.google.com/spreadsheets/d/1oyqAyIsp-EtzKQMCIrzMiwrGk9grVu2q/edit#gid=84123752)
 
-
 ## チャレンジ要素一覧
-[ここやで！](https://docs.google.com/spreadsheets/d/10fBULW2zp7TOlEqKp4M9HFH9mq97a3og0Trzv95gXyI/edit#gid=1936046502)
+[ここから](https://docs.google.com/spreadsheets/d/10fBULW2zp7TOlEqKp4M9HFH9mq97a3og0Trzv95gXyI/edit#gid=1936046502)
 
 ## 開発環境
 OS：Linux(CentOS)
