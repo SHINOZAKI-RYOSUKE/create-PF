@@ -180,3 +180,213 @@ IDE：Cloud9
 (未定ですがおそらく取り込みます。) 
 - 使用しない場合は、使用素材の項目をREADMEから削除してください。
 (未定ですがおそらく取り込みます。) 
+
+
+
+
+# スムーズな環境構築を求めて
+<details>
+<summary>クリックで展開</summary>
+
+## gemインストール
+
+```
+gem 'refile'
+gem 'devise'
+gem 'pry-rails'
+gem 'pry-byebug'
+gem 'kaminari', '~> 0.17.0'
+gem 'bootstrap', '~> 4.5'
+gem 'jquery-rails'
+gem 'font-awesome-sass', '~> 5.13'
+```
+
+
+## モデル作成
+
+### User
+```
+$ rails g devise User
+#デフォルトはメールアドレスとパスワードのみ
+```
+> カラム追加
+```
+$ rails g migration AddColumnsToUsers 
+```
+>XXXXXXXXXXX_add_columns_to_users.rb
+``` ruby
+  def change
+    add_column :users, :name, :string
+    add_column :users, :profile_image, :string
+    add_column :users, :introduction, :txst
+    add_column :users, :greeting, :string
+    add_column :users, :email, :string
+  end
+```
+### Content
+```
+$ rails g model Content user_id:integer content_image:string description:txst
+```
+### Relationship
+```
+$ rails g model Relationship following_id:integer follower_id:integer
+```
+### Favorite
+```
+$ rails g model Favorite user_id:integer content_id:integer
+```
+### Comment
+```
+$ rails g model Comment user_id:integer content_id:integer comment:txst
+```
+### Chat
+```
+$ rails g model Chat user_id:integer room_id:integer message:txst
+```
+### Room
+```
+$ rails g model Room
+```
+### UserRoom
+```
+$ rails g model UserRoom user_id:integer room_id:integer
+```
+
+rails db:migrate
+
+
+## アソシエーション作成
+
+>user.rb
+~~~user.rb
+has_many :contents
+has_many :comments
+has_many :favotites
+has_many :chats
+has_many :user_rooms
+has_many :rooms, through: :user_rooms
+
+
+has_many :active_relationships, class_name: "Relationship", foreign_key: :following_id
+
+has_many :followings, through: :active_relationships, source: :follower
+
+
+has_many :passive_relationships, class_name: "Relationship", foreign_key: :follower_id
+
+has_many :followers, through: :passive_relationships, source: :following
+~~~
+
+
+>content.rb
+~~~content.rb
+belong_to :user
+has_many :comments, dependent: :destroy
+has_many :favorites, dependent: :destroy
+~~~
+
+>relationship.rb
+~~~relationship.rb
+belongs_to :following, class_name: "User"
+belongs_to :follower, class_name: "User"
+~~~
+
+>favorite.rb
+~~~favorite.rb
+belongs_to :user
+belongs_to :content
+~~~
+
+>comment.rb
+~~~comment.rb
+belongs_to :user
+belongs_to :content
+~~~
+
+>chat.rb
+~~~chat.rb
+belongs_to :user
+belongs_to :room
+~~~
+
+>room.rb
+~~~room.rb
+has_many :chats
+has_many :user_rooms
+~~~
+
+>user_room.rb
+~~~user_room.rb
+belongs_to :user
+belongs_to :room
+~~~
+
+
+## コントローラー作成
+
+#### homes
+```
+rails g controller homes about
+```
+#### users
+```
+rails g devise:controllers user index show edit update
+```
+#### contents
+```
+rails g controller contents index show edit new create update destroy
+```
+#### relationships
+```
+rails g controller relationships index create destroy 
+```
+#### favorites
+```
+rails g controller favorites index create destroy
+```
+#### comments
+```
+rails g controller comments index create destroy
+```
+#### chats
+```
+rails g controller chats iindex show create
+```
+
+
+## ルーティング作成
+
+
+>routes.rb
+
+~~~ ruby
+
+
+    devise_for :users
+
+   
+    root :to => "contents#index"
+    
+    
+    resource :homes do
+     get :about, on: collection
+    end
+    
+
+    resources :users, only: [:index, :show, :edit, :update] do
+     resource :relationships, only: [:index, :create, :destroy]
+    end
+    
+
+    resources :contents do
+     resource :favorites, only: [:index, :create, :destroy]
+     resources :comments, only: [:index, :create, :destroy]
+    end
+    
+    
+    get 'chat/:id' => 'chats#show', as: 'chat'
+ 
+    resources :chats, only: [:index, :create]
+    
+~~~
+</details>
