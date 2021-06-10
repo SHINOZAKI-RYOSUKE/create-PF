@@ -223,8 +223,13 @@ $ rails g migration AddColumnsToUsers
     add_column :users, :profile_image, :string
     add_column :users, :introduction, :text
     add_column :users, :greeting, :string
-    add_column :users, :email, :string
   end
+  
+  またはrails db:migrateする前に直接migration fileに記述する。
+　t.string :name
+  t.string :profile_image
+  t.text   :introduction
+  t.string :greeting
 ```
 ### Content
 ```
@@ -331,10 +336,15 @@ belongs_to :room
 ```
 rails g controller homes about
 ```
+#### users（devise）
+```
+rails g devise:controllers users
+```
 #### users
 ```
-rails g devise:controllers user index show edit 
+rails g controller users index show edit 
 ```
+
 #### contents
 ```
 rails g controller contents index show edit new 
@@ -372,7 +382,7 @@ rails g controller chats index show
     
     
     resource :homes do
-     get :about, on: collection
+     get :about, on: :collection
     end
     
 
