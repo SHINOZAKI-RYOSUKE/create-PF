@@ -199,6 +199,9 @@ gem 'kaminari', '~> 0.17.0'
 gem 'bootstrap', '~> 4.5'
 gem 'jquery-rails'
 gem 'font-awesome-sass', '~> 5.13'
+
+$ bundle install
+$ rails g devise:install
 ```
 
 
@@ -218,14 +221,14 @@ $ rails g migration AddColumnsToUsers
   def change
     add_column :users, :name, :string
     add_column :users, :profile_image, :string
-    add_column :users, :introduction, :txst
+    add_column :users, :introduction, :text
     add_column :users, :greeting, :string
     add_column :users, :email, :string
   end
 ```
 ### Content
 ```
-$ rails g model Content user_id:integer content_image:string description:txst
+$ rails g model Content user_id:integer content_image:string description:text
 ```
 ### Relationship
 ```
@@ -237,11 +240,11 @@ $ rails g model Favorite user_id:integer content_id:integer
 ```
 ### Comment
 ```
-$ rails g model Comment user_id:integer content_id:integer comment:txst
+$ rails g model Comment user_id:integer content_id:integer comment:text
 ```
 ### Chat
 ```
-$ rails g model Chat user_id:integer room_id:integer message:txst
+$ rails g model Chat user_id:integer room_id:integer message:text
 ```
 ### Room
 ```
@@ -330,27 +333,27 @@ rails g controller homes about
 ```
 #### users
 ```
-rails g devise:controllers user index show edit update
+rails g devise:controllers user index show edit 
 ```
 #### contents
 ```
-rails g controller contents index show edit new create update destroy
+rails g controller contents index show edit new 
 ```
 #### relationships
 ```
-rails g controller relationships index create destroy 
+rails g controller relationships index  
 ```
 #### favorites
 ```
-rails g controller favorites index create destroy
+rails g controller favorites index 
 ```
 #### comments
 ```
-rails g controller comments index create destroy
+rails g controller comments index 
 ```
 #### chats
 ```
-rails g controller chats iindex show create
+rails g controller chats index show
 ```
 
 
