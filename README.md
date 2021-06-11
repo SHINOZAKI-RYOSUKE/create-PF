@@ -337,10 +337,6 @@ belongs_to :room
 rails g controller homes about
 ```
 
-#### users（devise）
-```
-rails g devise:controllers users
-```
 #### users（devise）（viewも一緒に）
 ```
 rails g devise:controllers users
