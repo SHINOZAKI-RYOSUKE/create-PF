@@ -336,9 +336,15 @@ belongs_to :room
 ```
 rails g controller homes about
 ```
+
 #### users（devise）
 ```
 rails g devise:controllers users
+```
+#### users（devise）（viewも一緒に）
+```
+rails g devise:controllers users
+rails g devise:views
 ```
 #### users
 ```
@@ -349,18 +355,22 @@ rails g controller users index show edit
 ```
 rails g controller contents index show edit new 
 ```
+
 #### relationships
 ```
 rails g controller relationships index  
 ```
+
 #### favorites
 ```
 rails g controller favorites index 
 ```
+
 #### comments
 ```
 rails g controller comments index 
 ```
+
 #### chats
 ```
 rails g controller chats index show
